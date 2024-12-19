@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Amazon shipping charge calculator</p>
+    <input type="text" class="js-input" oninput="typing()">
+    <button onclick="calculate()">calculate</button>
+    <p class="js-typing"></p>
+
+    <script>
+        const typePara = document.querySelector('.js-typing');
+        function typing(){
+            
+            if(typePara.innerHTML === 'Typing'){
+                typePara.innerText = 'Typing...';
+                console.log('Typing...')
+                console.log(event);
+            }
+            else{
+                typePara.innerHTML = 'Typing'
+                console.log('Typing')
+            }
+        }
+        function calculate(){
+            const inputElement = document.querySelector('.js-input');
+            let inp = Number (inputElement.value);
+            if(inp<40){
+                inp+=10;
+            }
+            typePara.innerText = `Total cost is $${inp}`;
+        }
+    </script>
+</body>
+</html>
