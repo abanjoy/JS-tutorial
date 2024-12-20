@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Amazon delivery charges</h3>
+    <p>if the cost of the product is less than $40 then add delivery charge $15 </p>
+    <input id="js-inp" type="text" placeholder="enter" onkeyup="enterEvent(event)">
+    <button onclick="calculate()">calculate</button>
+    <p id="js-para"></p>
+
+    <script>
+        console.log(5+'25'+'20' - 5 +'10');
+        function enterEvent(event){
+            console.log(event);
+            console.log(event.key);
+            if(event.key === 'Enter'){
+                calculate();
+            }
+        }
+        function calculate(){
+            const inpBox = document.querySelector("#js-inp");
+            let val = Number(inpBox.value);
+
+            if(val <40){
+                val+=15;
+            }
+            document.querySelector("#js-para").innerText = 'delivery charge is $' + val;
+
+        }
+    </script>
+    
+</body>
+</html>
