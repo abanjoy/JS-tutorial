@@ -1,0 +1,61 @@
+HTML - CSS - JAVASCRIPT COmbined
+
+<button>Subscribe</button>
+in CSS  
+    button{} --> is called as Css Selectors
+                here we can apply style and change the appearance
+                This  will effective for all the buttons inside the page.
+
+    To apply specifically for a button or buttons we can use id and class Selectors
+
+we cam have multiple class names for an element. They can differenciate by giving space between them.
+eg : <button class="js-Subscribe-btn Subscribe-btn" >Subscribe</button>
+    here 2 classes js-Subscribe-btn and Subscribe-btn where seperated by space between them
+    for class we can apply Css seelctor by giving as 
+        .Subscribe-btn{}
+
+.subscribe-btn{
+            border: none; --> property-value pair
+        }
+
+Like innerText,innerHTML , we have an attribute in JS called classList
+    classList -> gives us control over the class attribute
+
+    when we click the button, add a class, this class will have different styles
+
+    For classList() we have properties and values
+        1.add()  -> adds class to the (list of) classes that we given in the html tag
+            so we can style that class in css, when the class get added to the list then
+            only the class name will added to the clases in the html tags
+
+        2.remove()  -> removes class from the list
+
+
+        example:-
+
+            <button onclick="change()" class="js-subscribe-btn subscribe-btn">Subscribe</button>
+
+            if(btn.innerText === 'Subscribe'){
+                btn.innerText = 'Subscribed';
+                btn.classList.add('is-subscribed')
+            }
+            else{
+                btn.innerText = 'Subscribe';
+                btn.classList.remove('is-subscribed');
+            }
+
+    These newly added css via class name will overrides the already existing once
+rgb(,,) --> RGB --> red- green- blue
+    each color will from 0 - 255
+        eg: rgb(240, 30. 160) mixing of 3 colors
+
+<img> --> has no closing tag. there fo rit is called as void tags.
+
+APPLYING PNG IMAGES
+
+    To give PNG file effectivley or back ground of png image become transparent 
+        <img src="" style="background-color: transparent;">
+        some times a shade box may appears, so it can remove by applying border css
+CIRCULAR border
+    To give circular border make a square of width and height
+    then apply border-radius as half of height  or width

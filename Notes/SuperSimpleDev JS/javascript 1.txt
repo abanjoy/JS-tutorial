@@ -1,0 +1,172 @@
+
+What is JS?
+Like orther programming languages , Giving instructions and Computer follows the instruction
+The role of JS is to make the page more interactive
+JS is Case Sensitive
+
+SetUP
+ web browser
+
+Alert
+
+==> alert('Hello');
+alert('Good Job');
+alert(20-5);
+
+MATH
+2+2
+
+INNERHTML
+
+document.body.innerHTML="Hello";
+
+ROUND The Digit in JS
+Math.round(2.6) --> 3
+Math.round(3.8) --> 4
+
+
+STRING
+String represents the text
+'hello'
+
+	Syntax Rule
+		* String Concatination
+		'some'+'text'
+		"Some"+"Text"
+		"Hello"+9 --> 'Hello9' {This is called Type Conversion}
+		'Hello'+90 -->'Hello90'
+	
+	3 Ways to create the string
+		-->	' Hii, Hello"
+		-->	"I'm learning javascript" OR 'I\'m learning javascript' (By using escape characters)
+		-->	`Hello` (By using bactis) (Strings creating using bactics are called template strings )
+			creating texts by bactis has many features
+				1--> Interpolation (Inserting values directly into string)
+					eg : `Items (${1+1}): Rs.${(20+30)/2}`  --> 'Items (2): Rs.25
+					
+				2--> Multi line features
+					eg: `Some
+						Text` --> gives same as in 2 different lines
+						
+	
+NAMING CONVENTIONS
+		
+		--> Camel Case Convention --> eg: cartQuantity
+		--> Pascal Convention	--> eg: CartQuantity
+		--> Kebab Case Convention  --> eg: camel-case-convention
+		
+NEW LINE Character --> "\n"
+
+METHODS IN JAVASCRIPT
+	--> alert("Type something");
+	--> Math.round(int value);
+	--> typeof(value)
+			typeof("Hello");;--> String	
+			typeof(20); --> number
+			typeof 20; --> number
+			typeof 20.5 --> number
+	--> console.log("Message" or variable); --> To print message in console
+	--> Math.random() --> generates number between 0 and 1, 0<= num <1
+			
+WHAT IS A VARIABLE?
+	--> let
+		let varA=3;
+		
+	--> const
+		this keep the variable unchanged and if we try to change the variable it arises an error
+		
+	-->var
+		var is also can change latee as like of let.
+		var have some issue, that's why it didn't use more..we can study it later
+		
+WHAT ARE BOOLEANS? 
+	true or false
+	
+	console.log(3<5): --> true 
+	console.log(3>5) --> false
+	
+Truthy Values and Falsy Values
+	Values that behaves as false are called falsy values --> eg: false, 0 , '', NaN, Undefined, null
+	values that behave as true are called truthy values -->  rest of falsy are truthy values
+	
+	
+OPERATORS
+	--> <
+	--> >
+	--> >=
+	--> <=
+	--> == equal to (first convert type to LHS and compare) eg: console.log(5 == '5.0') --> true
+	--> ====  equal to (compare with its original value)	eg: console.log(5 === '5.0') --> false
+
+	--> !== not equal to
+	--> && And OPERATORS
+	--> || Or Operator
+	--> ! Not operator 
+		
+		
+SHORTCUT FOR IF STATEMENT
+	- TERNARY OPERATOR ?:
+			--> true ? 'Yes' : 'No' ;
+			
+	- GUARD OPERATOR &&
+			--> true && true --> gives second condition as output
+					eg: const var1 = 3>2 && 10
+						console.log(varA); ---> 10
+			--> false && true --> 
+					eg: const varB = 3>5 && 10;
+					console.log(varB); --> false
+					
+	- DEFAULT OPERATOR || 
+			operates similar to guard operator but only difference is work as "OR"
+			
+			--> console.log( false || 10); --> 10
+				console.log( undefined || 10);
+			--> console.log( true || 10); --> true
+				console.log( 5 || 10); --> 5
+		
+		
+CART QUANTITY UPDATION
+	<button onclick="console.log(`Cart quantity: ${cartQuantity}`)">
+        Show Quantity
+    </button>
+    <button onclick="
+        cartQuantity=cartQuantity+1;
+        console.log(`cart Quantity: ${cartQuantity}`)">
+        Add to Cart
+    </button>
+    <button onclick="
+        cartQuantity=cartQuantity+2;
+        console.log(`cart quantity: ${cartQuantity}`)">
+        +2
+    </button>
+    <button onclick="
+        cartQuantity=cartQuantity+3;
+        console.log(`cart quantity: ${cartQuantity}`)">
+        +3
+    </button>
+    <button onclick="
+        console.log('cart quantity is reseted');
+        cartQuantity=0;
+        console.log(`cart quantity: ${cartQuantity}`)">
+        Reset Cart
+    </button>
+    
+    <script>
+        let cartQuantity= 0;
+
+    </script>
+
+--> FUNCTIONS
+	Functions are the purpose for the reusability of codes
+	
+	Syntax
+	function functionName(){ --> Best practise is to use camel case
+
+	parameter --> Puts value inside a function
+	Return --> Gets values out of a function
+
+	SETTING DEFAULT VALUE
+	function calculateTax(amount, tax = 0.1){
+		console.log(amount * tax);
+	} --> So in the case in which user will not add any seconf parameter, function take second value as tax 
+		parameter

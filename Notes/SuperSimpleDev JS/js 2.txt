@@ -1,0 +1,184 @@
+OBJECTS
+	Object let us groups multiple values together
+	Object let us use multiple values together
+		eg:-> const product = {};
+			const product = { name: 'aban', price:1030 };
+	like key value pairs
+	keys -> also called as property
+
+	get value by keys -> eg: console.log(product.name);
+
+	change value in objects
+		eg: product.price= 2030 ;
+Sytax rule:
+	Object as property value pair
+	access the value -> objectName.propertyName --> Dot notation
+				this gives exception error if the property is not present.
+				eg: const Bag = {
+        				brand : 'allen Solly',
+        				order-date : '2 day',   --> error because of notations like (-).
+        				['delivery-time']: '1 day'  --> such error notations can be handle by.
+    				    }
+
+			 -> objectName['propertyName'] --> Bracket Notation
+				will not arise any error if the property is not present inside the object. --> undefined.
+				eg: const Bag = {
+        				brand : 'allen Solly',
+        				'order-date ': '2 day',  --> or ['order-date ': '2 day' ]
+        				['delivery-time']: '1 day'
+    				    }	
+				
+
+	if the property name is didn't exist, then it gives --> undefined
+
+	Adding values to object, Use Dot Notation
+		eg: product.color = 'Blue';
+
+	Deleteing property from object
+		eg: delete product.name; --> deletes the property name from object 
+
+	To check Type of data
+		console.log( typeof product); --> object
+
+NEXTED Object
+	object inside of object
+	const product = {
+		name : 'Lays',
+		price : ,
+		rating: {
+			stars :4.5,
+			count : 87
+		}
+	}
+
+	console.log( product.rating.stars );
+
+Funtion inside the object
+	
+	const product = {
+		name : 'Lays',
+		price : ,
+		rating: {
+			stars :4.5,
+			count : 87
+		}
+		print : function printdata(){
+				console.log(" The price is ");
+			}
+	}
+
+	product.print() ; --> access the function inside of the object.
+
+	Example for inbuilt function inside the object
+	eg: console.log, Math.random, 
+	e: console.log  -> console -> object
+			-> log -> method
+	console.log( typeof console ); -> Object
+	console.log(typeof console.log ); -> function
+
+Built In Objects in JS
+	console
+	Math
+	JSON
+	localStorage
+1) JSON
+	JSON bult in objects
+	JSON -> JavaScript Object Notation
+	basically a syntax similar to javascript object
+	but has less features
+	
+	Diff b/n JSON and JS object
+		-> JSON will not support single quotes ''
+		-> JSON will not support functions
+		-> JSON syntax is supports by almost every programming languages.
+		-> So used to send data b/n 2 different programming languages and store data
+
+	JSON SYNTAX
+	{
+	   "name" : "SHirt",
+	   "delivery-time" : "1 day",
+	   " rating ": {
+		"stars" : 4.5,
+		"count" : 87
+	   }
+	}
+
+	Built in JSON Object
+
+	Convert JS object to JSON
+		const json = JSON.stringyfy(product);
+		console.log( typeof json); --> String
+	Convert back to object
+		const jsonObject = JSON.parse(json);
+		console.log( typeof jsonObject); --> object
+	
+2) LocalStorage
+	Save the values more permanently
+	When refresh the page, the variables get cleared. variables has less duration for saving data
+	local storage only supports strngs
+	
+	set uup the local storage  -> localStorage.setItem('Name_ in string', 'value in string');
+					eg: localStorage.setItem('message; : 'Hello');
+	access from localStorage  -> localStorage.getItem('message');
+
+	to convert String to int --> parseInt( stringVal);
+	to convert to string for storage ---> JSON.stringyfy( intValue );
+
+null VS undefined
+	null = intentionally want something to be empty.
+	undefined = default values assigned at the system.
+
+AutoBoxing
+	'hello'
+	'hello'.length --> 5
+	'hello'.toUpperCase() --> HELLO
+
+	JS automatically make 'hello' as a string object. this is called autoboxing.
+	Autp boxing also worked with numbers and boolean.  -> 1.5.toString()
+								true.toString()
+	Auto boxing is not worked with null and undefined
+
+Destructuring 
+	Easier way to take object out of an object.	
+
+	const obj ={
+		message :'hello'
+		color : 'red'
+	}
+	if we want to make the copy value to a string reference, in which referece has the same name as object property
+	const message = obj.message;
+	by simply
+	const {messaeg} = obj;
+	const {message, color } = obj;
+
+Shorthand Property
+	easier way to assing values to property if variable name and propery name are same.
+	const msg='hii Its me';
+    	const obj1 = {
+        	msg = msg
+    	}
+	here name of both are same
+	so we can do like 
+	const obj1 = {
+		msg
+	}
+
+Shorthand Mehtod
+	easier method to create method inside the object.
+	const obj = {
+		msg: 'hello',
+		func : function print(){
+			console.log('inside the method');
+		}
+	};
+
+	obj.func():
+
+	easy way
+	const obj = {
+		msg: 'hello',
+		func(){
+			console.log('inside the method');
+		}
+	}
+	obj.func();

@@ -1,0 +1,143 @@
+DOM - Document Object Model
+DOM - document is also another built in object in javascript, called as document object.
+
+Previously we leran about the built in objects like.
+	-> console
+	->Math
+	-> JSON
+	-> localStorage
+	-> document (newly learned)
+
+document.body.innerHtml="Hello" --> Changes the whole things already written in body tag and only showa the "Hello".
+The document object represents/ models the web page --> So it called as DOM.
+
+document object is linked to the web page.
+
+Syntax -> document.  -> "." is used to access from document object
+
+Mehtods and Properties
+	Document as contain methods and properties
+
+	1) document.title   
+		console.log(document.title)  -> gives what ever thing that we given in title tag or via document.title
+
+		if we change what ever thing that we given through document.title --> it also get changed
+		eg: document.title= "Hello"
+		    console.log(document.title) --> Hello
+	2) document.body
+		console.log(document.body) --> <body>...</body> (gives what ever code inside the body tag)
+-> This show we have Html elements inside the JavaScript, That is DOM combines Javascript and HTML together
+-> Html element is just as an object inside the jaavscript.
+	console.log( typeof document.body ) --> object
+
+	3) document.body.innerHTML
+		innerHTML controls all the html inside the body.
+
+		console.log(document.body.innerHTML) --> gives all the html contents inside the body along with inside script tag. if present
+		if we change by document.body.innerHTML = "Changed " --> the whole tags get overrided by the string Changed
+
+		document.innerHTML("<button> Good Job! </button> "); ---> gives a button inside the body
+
+	4) document.querySelector()
+		let us get any element from the page and put it inside jaavscript
+
+		document.querySelector('button') --> <button> Submit </button>  --> selects the first button from the html
+		document.querySelector('body') --> Same as that of document.body
+
+	   document.querySelector('button').innerHTML  --> Submit
+		it gives what ever thing that are inside the button tag
+	   document.querySelector('button').innerHTML = "Changed"  --> changes the value inside the button
+
+	document.querySelector() --> will gives only the first appeared one. 
+	To get thing from second appearance by calling via class attribute
+		eg: <button>submit</button>
+		    <button class="js-button" >Second button</button>
+
+		it can access by
+		console.log(document.querySelector('.js-button')); --> Second button
+		This is via class selectors, this is also used in CSS also
+	
+		Anything that we used in CSS acn be used inside the sting section of querySelector()
+
+	Objects are values. So we can save that in variables
+
+	5.document.querySelector().innerText
+		this will give only the text inside the tags
+		eg : <buttton> Subscribe </button>
+			document.innerHTML --> _Subscribe_
+			document.innerText --> Subscribe
+
+	6. document.querySelector().value --> will give the value inside the input text area.
+		const inputElement = document.querySelector('.js-cost-input')
+            	let cost = Number(inputElement.value );
+
+block element --> which takes the entire line
+	eg: <p>
+typecasting in JS 
+	When ever we take value sfrom DOM, it will be string always.
+	To convert to number datatype , we need to do typecasting by using Number()
+	Number()
+		-> const inputElement = document.querySelector('.js-cost-input')
+            	   let cost = Number(inputElement.value );
+
+events in JS -> clicks, keydowns
+event listeners --> onclick, 
+		    onkeydown, 
+		    onscroll, 
+		    onmouseenter, 
+		    onmouseleave, 
+		    oninput,
+		    onfocus,
+		    ...etc
+
+	eg :<input type="text" onkeydown="console.log('Typing')" class="js-cost-input">
+
+event is an object that creates as part of event action
+	console.log(event); --> a big object
+
+	event object consist of key, keycode,...etc
+
+	console.log(event.key) --> gives what ever key that we entered
+		2-->2
+		5 --> 5
+		enter key --> enter
+	
+	eg :function calculateTotal(){
+            const inputElement = document.querySelector('.js-cost-input')
+            let cost = Number(inputElement.value );
+	    console.log(event);
+            
+        }
+
+	eg :--> this calls the function when they press the enter key rather than pressing calculate button
+		<p>Amazon Shipping Calculator</p>
+    		<input type="text" placeholder="cost of order" 
+        		onkeydown="console.log('Typing');
+            		console.log(event);
+            		if(event.key === 'Enter'){
+                		calculateTotal();
+            	}" 
+        	class="js-cost-input">
+    		<button onclick="calculateTotal()">Calculate</button>
+    		<p class="js-totalcost"></p>
+	
+Conversion of data types
+	string to number  --> Number(string_val)
+	number to string  --> String(number_val)
+
+	if a string only contains a number we can -*/ , JS will automatically convert it to a number.
+	console.log('20' - 5 );  --> 20   Automatic type conversion
+
+WINDOW Object
+	A built in object in JavaScript
+	document object represents the web page but,
+	window object represents the browser.
+
+	document object is inside of the window object
+		window.document
+		window.console   -> console is also inside the window object
+			window.console.log('Wind"); --> Wind
+		window.alert;
+
+	Actually we dont want to write window as prifix of every object, because
+	JS automatically adds window infront of every object
